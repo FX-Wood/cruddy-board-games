@@ -1,11 +1,17 @@
 {
   "name": "cruddy-board-games",
   "version": "0.0.1",
-  "description": "",
+  "description": "A simple node CRUD app with express, sequelize, and postgres",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "FX",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pg": "^7.8.1",
+    "sequelize": "^4.42.0"
+  }
 }
