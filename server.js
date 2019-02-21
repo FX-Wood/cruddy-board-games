@@ -10,7 +10,6 @@ app.use(methodOverride("_method"));
 
 app.get('/', function(req, res) {
     res.render('index');
-
 });
 
 // INDEX
@@ -37,6 +36,8 @@ app.post("/games", function(req, res) {
         players: req.body.players
     }).then(done => {
         res.redirect('/games')
+    }).catch(err => {
+        res.send(err)
     })
 });
 
