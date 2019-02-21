@@ -1,11 +1,13 @@
 <% include ../partials/header %>
 
-<h2></h2>
-<form method="POST" action="/games" >
-    <span>Name </span><input type="text">
-    <span>Description </span><input type="text"> 
-    <span>Description </span><input type="text"> 
-    <span>Players </span><input type="number">
-</form>
+<section class="game-box">
+        <h2>Add a new game</h2>
+        <form name="create" method="POST" action="/games" >
+            <p>Name </p>        <input name="name" type="text"> <br>
+            <p>Players </p>     <input name="players" type="number"> <br>
+            <p>Description </p> <textarea name="description" rows="4" cols="50"> </textarea> <br>
+            <input type="submit" value="ADD TO LIST"> 
+        </form>
+    </section>
 
 <% include ../partials/footer %>

@@ -1,12 +1,18 @@
 <% include ../partials/header %>
 
-<h1>SHOW</h1>
-<h2><%= game.name %></h2>
+<section class="game-box">
 
-<p>description: <%= game.description %></p>
-<p>Maximum players: <%= game.players %></p>
-<p>created at: <%= game.createdAt %></p>
-<p>updated at: <%= game.updatedAt %></p>
+    <h1>EDIT</h1>
+    <h2><%= game.name %></h2>
+    
+    <p>description: <%= game.description %></p>
+    <p>Maximum players: <%= game.players %></p>
+    <p>created at: <%= game.createdAt %></p>
+    <p>updated at: <%= game.updatedAt %></p>
+    <form action="none">
+        <input type="submit" value="delete" formmethod="POST" formaction="/games/<%= game.id %>?_method=DELETE">
+    </form>
+</section>
 
 <section class="game-box">
     <h2>Edit this game</h2>

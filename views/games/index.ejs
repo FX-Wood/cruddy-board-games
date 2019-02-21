@@ -1,14 +1,24 @@
 <% include ../partials/header.ejs %>
 
+<h1>INDEX</h1>
+
 <% games.forEach(function(game) { %>
     <div class="game-box">
         <p><a href="/games/<%= game.id %>"> <%= game.name %>: <span> <%= game.description %></span></a></p>
         <form action="none">
-            <input type="submit" value="edit" formmethod="POST" formaction="/games/edit/<%= game.id %>/?_method=PUT">
+            <input type="submit" value="edit" formmethod="GET" formaction="/games/<%= game.id %>/edit">
             <input type="submit" value="delete" formmethod="POST" formaction="/games/<%= game.id %>?_method=DELETE">
         </form>
     </div>
-
 <% }); %>
 
+<section class="game-box">
+    <h2>Add a new game</h2>
+    <form name="create" method="POST" action="/games" >
+        <p>Name </p>        <input name="name" type="text"> <br>
+        <p>Players </p>     <input name="players" type="number"> <br>
+        <p>Description </p> <textarea name="description" rows="4" cols="50"> </textarea> <br>
+        <input type="submit" value="ADD TO LIST"> 
+    </form>
+</section>
 <% include ../partials/footer.ejs %>
