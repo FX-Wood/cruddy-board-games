@@ -1,0 +1,14 @@
+<% include ../partials/header.ejs %>
+
+<% games.forEach(function(game) { %>
+    <div class="game-box">
+        <p><a href="/games/<%= game.id %>"> <%= game.name %>: <span> <%= game.description %></span></a></p>
+        <form action="none">
+            <input type="submit" value="edit" formmethod="POST" formaction="/games/edit/<%= game.id %>/?_method=PUT">
+            <input type="submit" value="delete" formmethod="POST" formaction="/games/<%= game.id %>?_method=DELETE">
+        </form>
+    </div>
+
+<% }); %>
+
+<% include ../partials/footer.ejs %>
